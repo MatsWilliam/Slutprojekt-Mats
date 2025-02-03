@@ -8,9 +8,17 @@
   <body>
     <header>Huvudsaken är att denna är här.</header>
     <main>Primär vy.
-      <section>Vänstersektionen
-        <h1>Profil</h1>
+      <section class="mainSections">Vänstersektionen
+        <div id="playlist-container"></div>
+      </section>
+        
+      <section class="mainSections">Mittensektionen
+          <h2>Nuvarande listordning</h2>
+          <p>Klicka på en lista för att visa listans låtar här.</p>
+      </section>
 
+      <section class="mainSections">Högersektionen
+        <h1>Profil</h1>
         <section id="profile">
         <h2>Inloggad som: <span id="displayName"></span></h2>
         <span id="avatar"></span>
@@ -23,8 +31,6 @@
         </ul>
         </section>
       </section>
-      <section>Mittensektionen</section>
-      <section>Högersektionen</section>
     </main>
     <footer>Detta är botten.</footer>
     <script type="module" src="/src/main.ts"></script>
