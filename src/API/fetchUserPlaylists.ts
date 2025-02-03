@@ -15,13 +15,13 @@ export async function fetchUserPlaylists(token: string): Promise<Playlist[]> {
     container.innerHTML = ""; // Clear previous content
 
     const ul = document.createElement("ul");
-    ul.style.listStyle = "none"; // För att visa liten bild hämtad av API-anropet
+    ul.style.listStyle = "none"; // För att kunna visa liten bild i stället för prick. Hämtad av API-anropet
 
     playlists.forEach((playlist) => {
         const li = document.createElement("li");
         li.style.marginBottom = "10px";
 
-        // bildens egenskaper som ska synas före respektive lista
+        // bildens egenskaper som ska synas före respektive lista istället för punkt.
         // const img = document.createElement("img");
         // img.src = playlist.images[0]?.url || "https://via.placeholder.com/150";
         // img.alt = `${playlist.name} cover`;
