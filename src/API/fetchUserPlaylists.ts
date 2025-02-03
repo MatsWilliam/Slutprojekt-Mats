@@ -8,6 +8,7 @@ export async function fetchUserPlaylists(token: string): Promise<Playlist[]> {
 
     const data = await result.json();
     return data.items as Playlist[];
+
 }export function populatePlaylistUI(playlists: Playlist[]) {
     const container = document.getElementById("playlist-container");
     if (!container) return;
@@ -16,10 +17,11 @@ export async function fetchUserPlaylists(token: string): Promise<Playlist[]> {
 
     const ul = document.createElement("ul");
     ul.style.listStyle = "none"; // För att kunna visa liten bild i stället för prick. Hämtad av API-anropet
+    let lastClickedItem: HTMLElement | null = null;
 
     playlists.forEach((playlist) => {
         const li = document.createElement("li");
-        li.style.marginBottom = "10px";
+        li.classList.add("playlist-item");
 
         // bildens egenskaper som ska synas före respektive lista istället för punkt.
         // const img = document.createElement("img");
@@ -31,14 +33,23 @@ export async function fetchUserPlaylists(token: string): Promise<Playlist[]> {
         // link.href = playlist.external_urls.spotify;
         link.textContent = playlist.name;
         link.target = "_blank"; // Open in a new tab
-        link.style.fontSize = "18px";
-        link.style.fontWeight = "bold";
-        link.style.display = "block"; // Block-level to appear on a new line
+        link.classList.add("playlist-link"); // Add SCSS class for styling
 
         const owner = document.createElement("p");
         owner.textContent = `By: ${playlist.owner.display_name}`;
-        owner.style.fontSize = "14px";
-        owner.style.color = "#666";
+        owner.classList.add("playlist-owner"); // Add SCSS class
+
+        li.addEventListener("click", () => {
+            console.log(`Playlist clicked: ${playlist.name}`);
+
+            if (lastClickedItem) {
+                lastClickedItem.classList.remove("highlighted");
+            }
+
+            // Highlight the clicked item
+            li.classList.add("highlighted");
+             lastClickedItem = li;
+        });
 
         // li.appendChild(img);
         li.appendChild(link);
