@@ -20,3 +20,18 @@ interface Image {
     height: number;
     width: number;
 }
+
+export interface Playlist {
+    id: string;
+    name: string;
+    description: string;
+    tracks: { total: number; };
+    images: { url: string; }[];
+    owner: {
+        display_name: string;
+        id: string;
+    };
+    // external_urls: {
+    //     spotify: string;
+    // };
+}
