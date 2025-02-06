@@ -18,5 +18,6 @@ if (!code) {
     console.log(profile);
     console.log(playlists);
     populateProfileUI(profile);
-    populatePlaylistUI(playlists);
+    populatePlaylistUI(playlists, accessToken);
 }
+

@@ -35,3 +35,36 @@ export interface Playlist {
     //     spotify: string;
     // };
 }
+// interface AudioFeatures {
+//     id: string;
+//     danceability: number;
+//     energy: number;
+//     tempo: number;
+//     valence: number;
+// }
+interface Track {
+    id: string;
+    name: string;
+    artists: Artist[];
+    album: {
+        id: string;
+        name: string;
+        images: { url: string; }[];
+    };
+    external_urls: {
+        spotify: string;
+    };
+}
+interface Artist {
+    id: string;
+    name: string;
+}
+// export interface AudioFeaturesResponse {
+//     audio_features: AudioFeatures[];
+// }
+export interface PlaylistTrackItem {
+    track: Track;
+}
+export interface PlaylistTracksResponse {
+    items: PlaylistTrackItem[];
+}
