@@ -14,6 +14,7 @@ export function populateProfileUI(profile: UserProfile) {
         profileImage.src = profile.images[0].url;
         document.getElementById("avatar")!.appendChild(profileImage);
     }
+    // Struktur finns i HTML.index populera dynamiskt vid tillfälle.
     document.getElementById("id")!.innerText = profile.id;
     document.getElementById("email")!.innerText = profile.email;
     document.getElementById("uri")!.innerText = profile.uri;
