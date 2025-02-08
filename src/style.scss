@@ -1,21 +1,53 @@
+$first-background-color: #121212;
+$second-background-color: #2e2e2e;
+
 body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+
     font-family: 'Arial', sans-serif;
     background-color: #121212;
     color: white;
     text-align: center;
     margin: 0;
-    // padding: 20px;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #121212;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 6fr auto;
+}
+
+
 .mainSections {
-    background-color: #333333;
+    // display: flex;
+    background-color: #2e2e2e;
+    text-align: start;
     border-radius: 8px;
     margin: 10px;
 }
 
-main {
-    display: flex;
-    flex-flow: row nowrap;
+#profile {
+    background-color: #121212;
+    // border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    // transform: scale(70%);
+    // transform-origin: center;
+    img {
+        border-radius: 10px;
+    }
+    ul {
+        visibility: hidden;
+    }
 }
 
 .playlist-list {
@@ -33,11 +65,10 @@ main {
     text-align:start;
 
     &:hover {
-        background-color: #f5f5f5; // Light gray on hover
+        background-color: #f5f5f5;
     }
 }
 
-// Playlist link styling
 .playlist-link {
     font-size: 18px;
     font-weight: bold;
@@ -49,14 +80,45 @@ main {
     }
 }
 
-// Playlist owner text
 .playlist-owner {
     font-size: 14px;
     color: #666;
 }
 
-// Highlight effect for the selected playlist
 .highlighted {
     background-color: #f0f0f0; // Light gray background
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.track-list {
+    list-style: none;
+    padding: 0;
+
+    .track-item {
+        padding: 10px;
+        cursor: pointer;
+
+        transition: background 0.2s;
+
+        &:hover {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        .track-name {
+            font-weight: bold;
+        }
+
+        .artist-name {
+            color: #666;
+            font-size: 14px;
+        }
+
+        &.highlighted {
+            background: #ffcc00;
+            border-radius: 6px;
+
+        }
+    }
 }
