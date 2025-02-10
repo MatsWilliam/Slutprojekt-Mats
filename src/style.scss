@@ -1,5 +1,8 @@
 $first-background-color: #121212;
 $second-background-color: #2e2e2e;
+@use 'playListTracks';
+
+// Variabler ska skickas till annan fil efter önskad struktur hittats. Även delar av stylingen ska skickas till respektive adekvat mapp.
 
 body {
     display: grid;
@@ -13,7 +16,7 @@ body {
     margin: 0;
 }
 
-header {
+header { // Varför inte alltid sticked?
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -24,7 +27,6 @@ main {
     display: grid;
     grid-template-columns: 2fr 6fr auto;
 }
-
 
 .mainSections {
     // display: flex;
@@ -47,6 +49,11 @@ main {
     }
     ul {
         visibility: hidden;
+    }
+    &hover {
+        .ul {
+            visibility: visible;
+        }
     }
 }
 
@@ -86,11 +93,11 @@ main {
 }
 
 .highlighted {
-    background-color: #f0f0f0; // Light gray background
+    background-color: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.track-list {
+.track-list { // Nestad style i linje med DOM strukturen
     list-style: none;
     padding: 0;
 
