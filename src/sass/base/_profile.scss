@@ -1,0 +1,22 @@
+
+
+#profile {
+    background-color: #121212;
+    // border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    // transform: scale(70%);
+    // transform-origin: center;
+    img {
+        border-radius: 10px;
+    }
+    ul {
+        visibility: hidden;
+    }
+    &hover {
+        .ul {
+            visibility: visible;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+
+@mixin effect($color: #f5f5f5) {
+    background: $color;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}

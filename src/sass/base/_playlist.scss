@@ -1,0 +1,36 @@
+@use "/src/sass/mixins/hover";
+
+.playlist-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align:start;
+
+    &:hover {
+        @include hover.effect();
+    }
+}
+
+.playlist-link {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.playlist-owner {
+    font-size: 14px;
+    color: #666;
+}
